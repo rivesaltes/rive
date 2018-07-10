@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset = UTF-8">
+        <link rel="stylesheet" href="highAndLow.css">
+        <title>High & Lowゲーム</title>
+    </head>
+    <body>
+        <div class="top-container"><p class="top-title">High & Lowゲーム</p>
+       		 <form action="highAndLow07.php" method="post">
+                <?php
+                $cards = array(
+                    "Jk.png", "01.png", "02.png", "03.png", "04.png", "05.png", "06.png",
+                    "07.png", "08.png", "09.png", "10.png", "11.png", "12.png", "13.png"
+                );
+                $leftCards = mt_rand(0, 13);
+                ?>
+                <div>
+                    <img src="../cards/<?php echo $cards[$leftCards]; ?>">
+                    <img src="../cards/bg.png">
+                </div>
+                <div>
+                    <input type="radio" name="select" value="High" class="btn">High
+                    <input type="radio" name="select" value="Low" class="btn">Low
+                </div>
+                <div>
+                    <input type="submit" value="決定">
+                    <input type="hidden" name="leftCard" value="<?php echo $leftCards; ?>">
+                </div>
+            </form>
+        </div>
+	</body>
+</html>
